@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.card-container{
+    width: 30vw;
+}
+
+.glow-button{
+    box-shadow: 1px 1px 7px rgba(31, 31, 31, 0.6);
+}
