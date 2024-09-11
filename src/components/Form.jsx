@@ -118,7 +118,7 @@ const StepForm = () => {
           delay: 0.1,
         }}
         exit={{ x: 100, opacity: 0 }} className="max-w-md mx-auto p-4">
-        <h2 className="text-xl font-bold">Submission Result</h2>
+        <h2 className="text-xl mb-4 text-center font-bold">Hi {formData.name}! Your Details</h2>
         <p className="mt-2">Name: {formData.name}</p>
         <p>Email: {formData.email}</p>
         <p>Address: {formData.address}</p>
