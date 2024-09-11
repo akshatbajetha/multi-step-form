@@ -65,6 +65,14 @@ const StepForm = () => {
 
   const handleReturnToForm = () => {
     setIsSubmitted(false);
+    setFormData({
+      name: "",
+      email: "",
+      address: "",
+      city: "",
+      cardNumber: "",
+      expiryDate: "",
+    })
     setStep(1);
   };
 
