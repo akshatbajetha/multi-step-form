@@ -32,9 +32,11 @@ const StepForm = () => {
 
   const validate = () => {
     const errors = {};
+    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
     if (step === 1) {
       if (!formData.name) errors.name = "Name is required";
       if (!formData.email) errors.email = "Email is required";
+      if (!emailPattern.test(formData.email)) errors.email = "Enter a valid email";
     } else if (step === 2) {
       if (!formData.address) errors.address = "Address is required";
       if (!formData.city) errors.city = "City is required";
