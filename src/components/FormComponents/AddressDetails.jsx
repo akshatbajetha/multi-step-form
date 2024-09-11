@@ -1,11 +1,19 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const AddressDetails = ({ formData, handleChange, errors }) => {
   return (
-    <div>
-      <h2 className="text-xl mb-4">Address Details</h2>
+    <motion.div 
+    initial={{ x: 100, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      transition={{
+        duration: 0.3,
+        delay: 0.1,
+      }}
+      exit={{ x: 100, opacity: 0 }}>
+      <h2 className="text-xl mb-4 text-center font-bold">Address Details</h2>
       <div className="mb-4">
-        <label className="block text-sm font-medium">Address</label>
+        <label className="block text-sm font-medium pb-2">Address</label>
         <input
           type="text"
           name="address"
@@ -18,7 +26,7 @@ const AddressDetails = ({ formData, handleChange, errors }) => {
         )}
       </div>
       <div className="mb-4">
-        <label className="block text-sm font-medium">City</label>
+        <label className="block text-sm font-medium pb-2">City</label>
         <input
           type="text"
           name="city"
@@ -28,7 +36,7 @@ const AddressDetails = ({ formData, handleChange, errors }) => {
         />
         {errors.city && <p className="text-red-500 text-sm">{errors.city}</p>}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

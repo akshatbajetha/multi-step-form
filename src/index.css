@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .card-container{
-    width: 30vw;
+    width: 40vw;
 }
 
 .glow-button{

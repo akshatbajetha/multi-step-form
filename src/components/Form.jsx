@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import PersonalDetails from "./FormComponents/PersonalDetails";
 import AddressDetails from "./FormComponents/AddressDetails";
 import PaymentDetails from "./FormComponents/PaymentDetails";
@@ -109,7 +110,14 @@ const StepForm = () => {
 
   if (isSubmitted) {
     return (
-      <div className="max-w-md mx-auto p-4">
+      <motion.div 
+      initial={{ x: 100, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{
+          duration: 0.3,
+          delay: 0.1,
+        }}
+        exit={{ x: 100, opacity: 0 }} className="max-w-md mx-auto p-4">
         <h2 className="text-xl font-bold">Submission Result</h2>
         <p className="mt-2">Name: {formData.name}</p>
         <p>Email: {formData.email}</p>
@@ -123,13 +131,13 @@ const StepForm = () => {
         >
           Return to Form
         </button>
-      </div>
+      </motion.div>
     );
   }
 
   return (
     <div className="max-w-md mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4">Multi-Step Form</h1>
+      <h1 className="text-3xl font-bold mb-4 text-center text-blue-500 pb-4">Multi-Step Form</h1>
       <form onSubmit={handleSubmit}>
         {stepContent()}
 

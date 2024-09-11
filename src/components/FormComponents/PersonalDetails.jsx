@@ -1,11 +1,19 @@
+import { motion } from "framer-motion";
 import React from "react";
 
 const PersonalDetails = ({ formData, handleChange, errors }) => {
   return (
-    <div>
-      <h2 className="text-xl mb-4">Personal Details</h2>
+    <motion.div 
+    initial={{ x: 100, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      transition={{
+        duration: 0.3,
+        delay: 0.1,
+      }}
+      exit={{ x: 100, opacity: 0 }}>
+      <h2 className="text-xl mb-4 text-center font-bold">Personal Details</h2>
       <div className="mb-4">
-        <label className="block text-sm font-medium">Name</label>
+        <label className="block text-sm font-medium pb-2">Name</label>
         <input
           type="text"
           name="name"
@@ -16,7 +24,7 @@ const PersonalDetails = ({ formData, handleChange, errors }) => {
         {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
       </div>
       <div className="mb-4">
-        <label className="block text-sm font-medium">Email</label>
+        <label className="block text-sm font-medium pb-2">Email</label>
         <input
           type="email"
           name="email"
@@ -26,7 +34,7 @@ const PersonalDetails = ({ formData, handleChange, errors }) => {
         />
         {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
       </div>
-    </div>
+    </motion.div>
   );
 };
 
